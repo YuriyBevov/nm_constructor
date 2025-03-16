@@ -1,0 +1,37 @@
+@forward "@styles/_extends/flexbox.scss";
+$base-section-offset: clamp(32px, 4vw, 64px);
+$base-section-header-offset: clamp(20px, 3vw, 28px);
+
+.base-section {
+	padding: calc($base-section-offset / 2) 0;
+
+	&__header {
+		position: relative;
+		@extend %flex-column;
+		align-items: center;
+		text-align: center;
+		gap: $base-section-header-offset;
+		padding-bottom: $base-section-header-offset;
+		margin-bottom: $base-section-offset;
+
+		& * {
+			margin-bottom: 0;
+		}
+
+		&-text {
+			max-width: 1140px;
+			font-size: clamp(14px, 2vw, 16px);
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			content: "";
+			transform: translateX(-50%);
+			width: 160px;
+			height: 4px;
+			background-color: var(--primary);
+		}
+	}
+}
