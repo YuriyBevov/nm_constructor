@@ -27,4 +27,18 @@
 	&--filled {
 		background-color: var(--primary);
 	}
+
+	&--simple {
+		align-items: center;
+		gap: 16px;
+		padding: 16px;
+		text-align: center;
+
+		svg {
+			fill: var(--primary);
+			margin-bottom: 10px;
+		}
+
+		color: var(--dark);
+	}
 }
