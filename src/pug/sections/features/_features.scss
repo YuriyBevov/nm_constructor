@@ -3,13 +3,13 @@
 @use "@styles/_vars/scoped" as *;
 @use "@pug/components/_ui/cards/feature-card/feature-card";
 
-$grid-gap: clamp(16px, 2.2vw, 32px);
+$grid-gap: var(--gap-sm);
 .features__grid {
 	&-container {
 		container: features-grid-container / inline-size;
 
 		&:not(:last-child) {
-			margin-bottom: 120px;
+			margin-bottom: 120px; // Для показа всех блоков ?
 		}
 	}
 
