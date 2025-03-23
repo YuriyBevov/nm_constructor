@@ -39,9 +39,6 @@
 .features__grid-container{
   container:features-grid-container/inline-size;
 }
-.features__grid-container:not(:last-child){
-  margin-bottom:120px;
-}
 .features__grid .features__grid-item{
   min-height:180px;
 }

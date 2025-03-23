@@ -234,7 +234,7 @@ h1{
 
 h2,
 .base-title{
-  font-size:clamp(20px, 6vw, 48px);
+  font-size:clamp(24px, 6vw, 48px);
 }
 
 h3{
@@ -580,6 +580,7 @@ img{
       -ms-transform:translateX(-50%);
           transform:translateX(-50%);
   width:160px;
+  max-width:30vw;
   height:4px;
   background-color:var(--primary);
 }
@@ -758,9 +759,6 @@ img{
 
 .features__grid-container{
   container:features-grid-container/inline-size;
-}
-.features__grid-container:not(:last-child){
-  margin-bottom:120px;
 }
 .features__grid .features__grid-item{
   min-height:180px;
@@ -988,9 +986,6 @@ img{
 
 .about__grid-container{
   container:about-grid-container/inline-size;
-}
-.about__grid-container:not(:last-child){
-  margin-bottom:120px;
 }
 .about__grid{
   gap:var(--gap-lg);

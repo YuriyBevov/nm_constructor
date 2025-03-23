@@ -7,10 +7,6 @@ $grid-gap: var(--gap-sm);
 .features__grid {
 	&-container {
 		container: features-grid-container / inline-size;
-
-		&:not(:last-child) {
-			margin-bottom: 120px; // Для показа всех блоков ?
-		}
 	}
 
 	.features__grid-item {
@@ -226,5 +222,3 @@ $grid-gap: var(--gap-sm);
 		}
 	}
 }
-
-// разобраться с тем, каким образом мы выставляем текст по верху !!
