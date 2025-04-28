@@ -7,6 +7,9 @@ $grid-gap: var(--gap-sm);
 .features__grid {
 	&-container {
 		container: features-grid-container / inline-size;
+		&:not(:last-child) {
+			margin-bottom: 120px; // Для показа всех блоков на одной странице
+		}
 	}
 
 	.features__grid-item {

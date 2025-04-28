@@ -8,6 +8,10 @@ $grid-gap: var(--gap-lg);
 .about {
 	&__grid-container {
 		container: about-grid-container / inline-size;
+
+		&:not(:last-child) {
+			margin-bottom: 120px; // Для показа всех блоков на одной странице
+		}
 	}
 
 	&__grid {
