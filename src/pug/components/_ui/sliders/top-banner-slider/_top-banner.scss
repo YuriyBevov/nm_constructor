@@ -1,0 +1,114 @@
+@forward "@styles/_extends/flexbox.scss";
+// @forward '@styles/_extends/effects.scss';
+// @forward '@styles/_extends/resets.scss';
+// @use '@styles/_mixins/container-queries' as *;
+// @use '@styles/_vars/scoped' as *;
+@use "@styles/_mixins/block-overlay" as *;
+
+$top-banner-offset-vertical: clamp(32px, 4vw, 84px);
+$top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
+
+.top-banner-slider {
+	@extend %flex-column;
+	height: 100%;
+
+	// глобальные модификаторы для всех слайдов начало
+	&.--full-height {
+		.top-banner {
+			min-height: 90svh;
+		}
+	}
+
+	.swiper-pagination.--pagination-thin {
+		@extend %flex-center;
+
+		left: 50%;
+		bottom: 20px;
+		transform: translateX(-50%);
+		width: 100%;
+		max-width: 1024px;
+		padding: 5px $top-banner-offset-horizontal;
+
+		.swiper-pagination-bullet {
+			flex-grow: 1;
+			border-radius: 0;
+			background-color: var(--primary);
+		}
+	}
+
+	// глобальные модификаторы для всех слайдов конец
+
+	.swiper-slide {
+		height: auto;
+	}
+}
+
+.top-banner {
+	@extend %flex-column;
+	padding: $top-banner-offset-vertical $top-banner-offset-horizontal;
+	height: 100%;
+
+	// модификаторы для подложки начало
+	&.--overlayed-dark {
+		@include block-overlay();
+	}
+
+	&.--overlayed-light {
+		@include block-overlay("light");
+	}
+	// модификаторы для подложки конец
+
+	// модификаторы для фоновой картинки начало
+
+	&.--bg-top-left {
+		background-position: top left;
+	}
+	&.--bg-top-center {
+		background-position: top center;
+	}
+	&.--bg-top-right {
+		background-position: top right;
+	}
+	&.--bg-bottom-left {
+		background-position: bottom left;
+	}
+	&.--bg-bottom-center {
+		background-position: bottom center;
+	}
+	&.--bg-bottom-right {
+		background-position: bottom right;
+	}
+	&.--bg-center-left {
+		background-position: left;
+	}
+	&.--bg-center-right {
+		background-position: right;
+	}
+	&.--bg-center {
+		background-position: center;
+	}
+	// модификаторы для фоновой картинки конец
+
+	// модификаторы для контентной области начало
+	&:not(.--fullwidth) {
+		.top-banner__wrapper {
+			max-width: 1140px;
+		}
+	}
+	&.--text-center {
+		text-align: center;
+	}
+
+	&.--text-right {
+		text-align: right;
+	}
+	// модификаторы для контентной области конец
+
+	&__wrapper {
+		width: 100%;
+		height: fit-content;
+		margin: auto;
+		outline: 1px solid red;
+		text-wrap: balance;
+	}
+}
