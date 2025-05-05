@@ -20,8 +20,8 @@
 	}
 
 	& > * {
-		position: relative;
-		z-index: 1;
+		// position: relative;
+		z-index: 20;
 	}
 
 	@if $theme == "light" {

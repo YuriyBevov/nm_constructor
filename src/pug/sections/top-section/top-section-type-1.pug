@@ -1,4 +1,4 @@
-include ../../components/_ui/sliders/top-banner-slider/template
+include ../../components/_ui/sliders/top-banner/template
 
 section.top-section.top-section--type-1
   +top-banner-slider({
@@ -8,15 +8,15 @@ section.top-section.top-section--type-1
       },
       pagination: {
         enabled: true,
-        dynamic: false,
-        modifiers: '--pagination-thin'
+        dynamic: true, 
+        modifiers: '--pagination-bullets-rectangle --pagination-bullets-size-md'
       },
       modifiers: '--full-height'
     },
 
     items: [
       {
-        modifiers: '--overlayed-dark --bg-center-left --fullwidth --text-left',
+        modifiers: '--overlayed-dark --blured-content --rounded-content --bg-bottom --fullwidth --text-center',
         title: {
           tag: 'h1',
           text: 'Современные интерьеры и ремонт под ключ'
@@ -29,7 +29,7 @@ section.top-section.top-section--type-1
         }
       },
       {
-        modifiers: '--overlayed-dark --bg-left',
+        modifiers: '--overlayed-dark --bg-left --text-center',
         title: {
           tag: 'span',
           text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
@@ -41,6 +41,85 @@ section.top-section.top-section--type-1
           path: 'top-section-bg@1x.jpg',
         }
       },
+            {
+        modifiers: '--overlayed-dark --blured-content --bg-bottom --fullwith --text-center',
+        title: {
+          tag: 'h1',
+          text: 'Современные интерьеры и ремонт под ключ'
+        },
+        description: {
+          text: 'Индивидуальный дизайн интерьера под ключ по доступной цене'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        }
+      },
+      {
+        modifiers: '--overlayed-dark --bg-left --text-center',
+        title: {
+          tag: 'span',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut sunt, quisquam quibusdam explicabo repellendus maiores temporibus quis. Sequi inventore nam laudantium perspiciatis asperiores optio ipsam id ullam sit. Facere, delectus.'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        }
+      },
+            {
+        modifiers: '--overlayed-dark --blured-content --bg-bottom --fullwith --text-center',
+        title: {
+          tag: 'h1',
+          text: 'Современные интерьеры и ремонт под ключ'
+        },
+        description: {
+          text: 'Индивидуальный дизайн интерьера под ключ по доступной цене'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        }
+      },
+      {
+        modifiers: '--overlayed-dark --bg-left --text-center',
+        title: {
+          tag: 'span',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut sunt, quisquam quibusdam explicabo repellendus maiores temporibus quis. Sequi inventore nam laudantium perspiciatis asperiores optio ipsam id ullam sit. Facere, delectus.'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        }
+      },
+            {
+        modifiers: '--overlayed-dark --blured-content --bg-bottom --fullwith --text-center',
+        title: {
+          tag: 'h1',
+          text: 'Современные интерьеры и ремонт под ключ'
+        },
+        description: {
+          text: 'Индивидуальный дизайн интерьера под ключ по доступной цене'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        }
+      },
+      {
+        modifiers: '--overlayed-dark --bg-left --text-center',
+        title: {
+          tag: 'span',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut sunt, quisquam quibusdam explicabo repellendus maiores temporibus quis. Sequi inventore nam laudantium perspiciatis asperiores optio ipsam id ullam sit. Facere, delectus.'
+        },
+        background: {
+          path: 'top-section-bg@1x.jpg',
+        }
+      },
+      
     ]
   })
 

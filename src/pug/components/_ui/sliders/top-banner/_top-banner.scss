@@ -1,8 +1,9 @@
 @forward "@styles/_extends/flexbox.scss";
 // @forward '@styles/_extends/effects.scss';
 // @forward '@styles/_extends/resets.scss';
-// @use '@styles/_mixins/container-queries' as *;
-// @use '@styles/_vars/scoped' as *;
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
 @use "@styles/_mixins/block-overlay" as *;
 
 $top-banner-offset-vertical: clamp(32px, 4vw, 84px);
@@ -11,6 +12,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 .top-banner-slider {
 	@extend %flex-column;
 	height: 100%;
+	container: top-banner-slider / inline-size;
 
 	// глобальные модификаторы для всех слайдов начало
 	&.--full-height {
@@ -19,27 +21,102 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 		}
 	}
 
-	.swiper-pagination.--pagination-thin {
-		@extend %flex-center;
+	&.--height-30 {
+		.top-banner {
+			min-height: 30svh;
+		}
+	}
 
-		left: 50%;
-		bottom: 20px;
-		transform: translateX(-50%);
+	&.--height-50 {
+		.top-banner {
+			min-height: 50svh;
+		}
+	}
+
+	&.--height-70 {
+		.top-banner {
+			min-height: 70svh;
+		}
+	}
+	// глобальные модификаторы для всех слайдов конец
+
+	// пагинация слайдера
+	.swiper-pagination {
+		padding: 20px 0;
+
+		&-bullet {
+			width: 8px;
+			height: 8px;
+			background-color: var(--primary);
+		}
+
+		&.--pagination-bullets-square,
+		&.--pagination-bullets-rectangle,
+		&.--pagination-bullets-rectangle-wide:not(
+				.swiper-pagination-bullets-dynamic
+			) {
+			.swiper-pagination-bullet {
+				border-radius: 0;
+			}
+		}
+	}
+
+	.swiper-pagination:not(
+			.swiper-pagination-bullets-dynamic
+		).--pagination-bullets-rectangle-wide {
+		display: flex;
 		width: 100%;
-		max-width: 1024px;
 		padding: 5px $top-banner-offset-horizontal;
 
 		.swiper-pagination-bullet {
 			flex-grow: 1;
-			border-radius: 0;
-			background-color: var(--primary);
 		}
 	}
 
-	// глобальные модификаторы для всех слайдов конец
+	.swiper-pagination.--pagination-bullets-rectangle {
+		.swiper-pagination-bullet {
+			width: 16px;
+		}
+	}
+
+	.swiper-pagination.--pagination-bullets-size-md {
+		.swiper-pagination-bullet {
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+	.swiper-pagination.--pagination-bullets-size-lg {
+		.swiper-pagination-bullet {
+			width: 12px;
+			height: 12px;
+		}
+	}
+
+	.swiper-pagination.--pagination-bullets-rectangle {
+		&.--pagination-bullets-size-md {
+			.swiper-pagination-bullet {
+				width: 20px;
+				height: 10px;
+			}
+		}
+
+		&.--pagination-bullets-size-lg {
+			.swiper-pagination-bullet {
+				width: 24px;
+				height: 12px;
+			}
+		}
+	}
 
 	.swiper-slide {
 		height: auto;
+	}
+
+	&:has(.swiper-pagination) {
+		.top-banner {
+			padding-bottom: 60px;
+		}
 	}
 }
 
@@ -47,6 +124,7 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 	@extend %flex-column;
 	padding: $top-banner-offset-vertical $top-banner-offset-horizontal;
 	height: 100%;
+	background-size: cover;
 
 	// модификаторы для подложки начало
 	&.--overlayed-dark {
@@ -102,13 +180,38 @@ $top-banner-offset-horizontal: clamp(16px, 4vw, 64px);
 	&.--text-right {
 		text-align: right;
 	}
+
+	&.--blured-content {
+		.top-banner__wrapper {
+			backdrop-filter: blur(20px);
+			padding: 40px 30px;
+			border: 2px solid var(--primary);
+		}
+	}
+
+	&.--rounded-content {
+		.top-banner__wrapper {
+			border-radius: var(--current-border-radius);
+		}
+	}
+
 	// модификаторы для контентной области конец
 
 	&__wrapper {
 		width: 100%;
 		height: fit-content;
 		margin: auto;
-		outline: 1px solid red;
+		padding: 20px 0;
 		text-wrap: balance;
+	}
+
+	&__img {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		z-index: 1 !important;
 	}
 }
